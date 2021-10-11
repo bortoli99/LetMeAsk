@@ -1,9 +1,10 @@
 import React from 'react';
+import { Home } from './pages/Home';
 
 
 function App() {
   return (
-    <h1>Bruno Bortoli</h1>
+    <Home />
   );
 }
 
