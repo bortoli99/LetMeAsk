@@ -1,10 +1,14 @@
+import { Link } from 'react-router-dom'
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
-import googleImg from '../assets/images/google-icon.svg'
 import '../styles/auth.scss'
 import { Button } from '../components/Button'
+import { useAuth } from '../hooks/useAuth'
 
 export function NewRoom(){
+
+    const {user, signInWithGoogle} = useAuth();
+
     return (
         <div id="page-auth">
             <aside>
@@ -23,7 +27,7 @@ export function NewRoom(){
                         </Button>
                     </form>
                     <p>
-                        Quer entrar numa sala existente? <a href="#">Clique Aqui</a>
+                        Quer entrar numa sala existente? <Link to="/">Clique Aqui</Link>
                     </p>
                 </div>
             </main>
