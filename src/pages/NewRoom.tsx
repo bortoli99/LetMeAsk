@@ -1,4 +1,4 @@
-import { Link, useHistory } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import '../styles/auth.scss'
@@ -11,7 +11,6 @@ export function NewRoom(){
 
     const {user, signInWithGoogle} = useAuth();
     const [newRoom, setNewRoom] = useState('');
-    const history = useHistory();
 
     async function handleCreateRoom(event: FormEvent) {
         event.preventDefault();
@@ -26,7 +25,6 @@ export function NewRoom(){
             authorId: user?.id,
         });
 
-        history.push('/rooms/' + firebaseRoom.key);
     }
 
     return (
